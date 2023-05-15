@@ -1,0 +1,37 @@
+def bfs(graph, start, end):
+    """
+    Finds the shortest path from start to end in graph using a breadth-first search.
+
+    Args:
+        graph: A graph object.
+        start: The start node.
+        end: The end node.
+
+    Returns:
+        A list of nodes representing the shortest path from start to end.
+    """
+
+    # Initialize the queue and the set of visited nodes.
+    queue = [(start, [start])]
+    visited = set()
+
+    # While the queue is not empty:
+    while queue:
+        # Pop the first node from the queue.
+        node, path = queue.pop(0)
+
+        # If the node is the end node, return the path.
+        if node == end:
+            return path
+
+        # Add the node to the set of visited nodes.
+        visited.add(node)
+
+        # For each neighbor of the node:
+        for neighbor in graph.childrenOf(node):
+            # If the neighbor is not in the set of visited nodes:
+            if neighbor not in visited:
+                # Add the neighbor to the queue and the path.
+                queue.append((neighbor, path + [neighbor]))
+
+    return None
