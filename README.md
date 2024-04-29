@@ -3,7 +3,8 @@
 
 
 Find Shortest -routes in your city
-This code finds the shortest path between two places using depth first search.
+
+This code finds the shortest path between two places.
 
 Usage
 To use the code, you will need to first create a graph object. You can do this by creating a new instance of the Graph class. Once you have created a graph object, you can add nodes and edges to it. To add a node, you can use the add_node method. To add an edge, you can use the add_edge method.
